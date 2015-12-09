@@ -1,10 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>微装B</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script language="JavaScript">
+        $(document).ready(function(){
+            $("#submit").click(function() {
+                $("#submit").text("装逼进行中...");
+            });
+        });
+    </script>
+    <title>微信步行助手</title>
 </head>
-<body>
-<h1>Hello, WeRun!</h1>
-</body>
+    <body>
+        <div class="container">
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <tr class="table">
+                {% for message in messages %}
+                  <td><h3 class="success">{{ message }}</h3></td>
+                {% endfor %}
+                </tr>
+              {% endif %}
+            {% endwith %}
+            <form method="post">
+              <div class="form-group">
+                <label>乐动力ID</label>
+                <input type="number" class="form-control"  placeholder="123456" name="ldl_id">
+              </div>
+              <div class="form-group">
+                <label>修改成多少?</label>
+                <input type="number" class="form-control" placeholder="98800" name="steps">
+              </div>
+              <button type="submit" class="btn btn-default" id="submit">我要装逼</button>
+            </form>
+            <div>已有{{ count }}人成功装逼</div>
+            <div>不会使用请看<a href="/help">使用帮助</a></div>
+            <div>新浪微博: <a href="http://weibo.com/q967168">@挨踢实习生</a></div>
+        </div>
+    </body>
 </html>

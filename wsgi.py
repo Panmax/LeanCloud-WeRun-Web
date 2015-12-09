@@ -6,9 +6,9 @@ import leancloud
 from wsgiref import simple_server
 
 
-APP_ID = os.environ['LC_APP_ID']
-MASTER_KEY = os.environ['LC_APP_MASTER_KEY']
-PORT = int(os.environ['LC_APP_PORT'])
+APP_ID = 'p5wg1h2JLLqAM4KYBsC1LYht-gzGzoHsz'
+MASTER_KEY = 'tThlPa3ROnEiYmbiiD8lSlTY'
+PORT = 3000
 
 
 leancloud.init(APP_ID, master_key=MASTER_KEY)
