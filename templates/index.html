@@ -25,8 +25,10 @@
     <title>微信运动助手</title>
 </head>
     <body>
+    <div class="container">
         <h1 class="text-center text-primary">微信运动助手</h1>
-        <div class="container">
+        <p class="text-center text-info">--懒癌的救赎</p>
+
             {% with messages = get_flashed_messages() %}
               {% if messages %}
                 <tr class="table">
@@ -36,6 +38,7 @@
                 </tr>
               {% endif %}
             {% endwith %}
+        <div style="margin-bottom: 30px"><h4>首次使用请查看:<a href="/help">使用帮助</a></h4></div>
             <form method="post">
               <div class="form-group">
                 <label>乐动力ID</label>
@@ -47,9 +50,8 @@
               </div>
               <button type="submit" class="btn btn-default" id="submit">我要装逼</button>
             </form>
-            <div>已有{{ count }}人成功装逼</div>
-            <div>不会使用请看<a href="/help">使用帮助</a></div>
-            <div>新浪微博: <a href="http://weibo.com/q967168">@挨踢实习生</a></div>
+            <div style="margin-top: 10px;"><h3>已有<b class="text-danger">{{ count }}</b>人成功装逼</h3></div>
+            <div><h4>新浪微博: <a href="http://weibo.com/q967168">@挨踢实习生</a></h4></div>
         </div>
     </body>
 </html>
