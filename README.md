@@ -1,1 +1,3 @@
-## 修改微信部署,web版
+## 修改微信运动数据
+
+## 地址: [微信运动修改器](http://dev.werun.avosapps.com/)
