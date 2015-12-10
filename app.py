@@ -15,7 +15,8 @@ app.secret_key = 'werun'
 logging.basicConfig(level=logging.INFO)
 
 
-all_password = [u'我只爱Panmax', u'ILovePanmax', u'Panmax万岁', u'我爱Panmax', u'Panmax', u'HelloPanmax', u'GoodPanmax']
+all_password = [u'我只爱Panmax', u'ILovePanmax', u'Panmax万岁', u'我爱Panmax', u'Panmax',
+                u'HelloPanmax', u'GoodPanmax', u'WeLovePanmax', u'WeAllLovePanmax']
 
 
 @app.route('/', methods=['GET', 'POST'])
