@@ -44,11 +44,16 @@
             <form method="post">
               <div class="form-group">
                 <label>乐动力ID</label>
-                <input type="number" class="form-control"  placeholder="123456" name="ldl_id" required>
+                <input type="number" class="form-control"  placeholder="如:123456" name="ldl_id" required>
               </div>
               <div class="form-group">
                 <label>修改成多少?</label>
-                <input type="number" class="form-control" placeholder="98800" name="steps" required>
+                <input type="number" class="form-control" placeholder="最大:98800" name="steps" required>
+              </div>
+              <div class="form-group">
+                <label>接头暗号:</label>
+                <input type="number" class="form-control" placeholder="请输入:{{ p_password }}" name="password" required>
+                <input type="hidden" name="real_password" value="{{ p_password }}">
               </div>
               <button type="submit" class="btn btn-default" id="submit">我要装逼</button>
             </form>
