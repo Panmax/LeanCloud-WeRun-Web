@@ -15,22 +15,12 @@ app.secret_key = 'werun'
 logging.basicConfig(level=logging.INFO)
 
 
-all_password = [u'我只爱Panmax', u'ILovePanmax', u'Panmax万岁', u'我爱Panmax', u'Panmax',
-                u'HelloPanmax', u'GoodPanmax', u'WeLovePanmax', u'WeAllLovePanmax']
-
-
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    p_password = all_password[random.randint(0, len(all_password)-1)]
     if request.method == 'POST':
         data = request.form
         ldl_id = data.get('ldl_id')
         steps = data.get('steps')
-        password = data.get('password', '')
-        real_password = data.get('real_password')
-        if password != real_password:
-            flash(u'接头暗号不正确')
-            return redirect('/')
         if not wechat_run.isnum(steps):
             flash(u'要修改的步数不正确~')
             return redirect('/')
@@ -47,7 +37,7 @@ def index():
             flash(u'修改失败~')
             return redirect('/')
     count = Query(ZhuangBiRecord).count()
-    return render_template('index.html', count=count, p_password=p_password)
+    return render_template('index.html', count=count)
 
 
 @app.route('/help')
