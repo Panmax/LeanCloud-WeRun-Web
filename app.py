@@ -1,9 +1,12 @@
 # coding: utf-8
+import thread
 
 from flask import Flask, render_template, request, flash, redirect
 import logging
 from leancloud import Query
 import random
+from gevent import monkey
+monkey.patch_all()
 
 from models import ZhuangBiRecord
 import wechat_run
@@ -43,3 +46,14 @@ def index():
 @app.route('/help')
 def help():
     return render_template('help.html')
+
+
+@app.route('/test_muti_thread')
+def test_muti_thread():
+    def print_id(thread_name):
+        data = Query(ZhuangBiRecord).first()
+        print "%s-%s" % (thread_name, data.id)
+
+    for i in range(1000):
+        thread.start_new_thread(print_id, ("Thread-%s" % i, ))
+    return "success"
