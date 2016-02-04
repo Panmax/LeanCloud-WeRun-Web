@@ -4,7 +4,6 @@ import thread
 from flask import Flask, render_template, request, flash, redirect
 import logging
 from leancloud import Query
-import random
 from gevent import monkey
 monkey.patch_all()
 
